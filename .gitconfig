@@ -1,0 +1,56 @@
+
+#  ██████╗ ██╗████████╗     ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗ 
+# ██╔════╝ ██║╚══██╔══╝    ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝ 
+# ██║  ███╗██║   ██║       ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
+# ██║   ██║██║   ██║       ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
+# ╚██████╔╝██║   ██║       ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
+#  ╚═════╝ ╚═╝   ╚═╝        ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
+
+# Git config
+  # Git config is where I put all my git configurations that git need when
+  # running any git command.
+
+
+# For defining user and an email, use "git config --global usr.name/email "Arguements"
+[user]
+	name = Muhammad Abouzeid #user name 
+	email = muhammaddspeaks@gmail.com #user email
+[core]
+  editor = nvim # Editor that opens for writing a commit msg when commiting a change.
+[alias]
+  # type "git" before every abbreviation to get the alias.
+
+  # For Clonning a subdirecotry fome a git repositry
+  clone-sub = !bash -i -c '_git_clone_sub "$@"'
+
+  # Git status with the signs: "##" "M" "??"
+  # "??" means untracked. "M" means modified. "##" means it's the same file found in the remote repo.
+  st = status -sb
+  
+  # Git log
+  lo = log --oneline --decorate --all --graph
+
+  # To print details about the last commit made by the user
+  last = log -1 HEAD --stat
+
+  # Git commit with "-m" to type a commit msg
+  cm = commit -m
+
+  # To print all the configured remote repositories
+  rv = remote -v
+
+  # To display differneces betweem two files in vim for complex differences
+  dv = difftool -t vimdiff -y
+
+  # To list all my git configs in ~/.gitconfig
+  gl = config --global -l
+
+  # To search for within your commits or your uploaded files in your system.
+	se = !git rev-list --all | xargs git grep -F
+
+  
+[help]
+
+  # Set the autocorrection to 2.0 seconds before continuing 
+  # if the git alias was written wrong.
+	autocorrect = 20
