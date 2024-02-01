@@ -1,0 +1,5 @@
+super + w
+        firefox
+
+super + shift + BackSpace
+        $HOME/bin/exit.sh

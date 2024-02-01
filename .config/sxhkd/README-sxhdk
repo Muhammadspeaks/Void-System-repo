@@ -1,0 +1,46 @@
+
+# ███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗ 
+# ██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗
+# ███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║
+# ╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║
+# ███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝
+# ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+
+
+1) What's sxhkd
+
+- sxhkd (Simple X hotkey daemon) is a simple X hotkey daemon, by the developer of bspwm, that reacts to input events by executing commands. 
+Configuration file that sxkhd program intiates with is found is $HOME/.config/sxhkd/sxhkdrc
+
+2) Function
+
+- What sxhkd simply do is listen ti the keys/keybindings you click on your keyboard and excutes the command if it found a match in the sxhkdrc file
+
+For example:
+
+in sxhkdrc you probably find something like this: 
+                
+                    super + w
+                            firefox
+
+while typing, if you pressed super key (Win key) + w, it'll open firefox.
+This simply happens because sxhkd simulates as you was in a shell and typed the command by yourself like 
+
+                    [user@host ~]$ firefox 
+
+3) Notes
+
+- sxhkd only restarts or does not apply any changes you made in the shxkdrc file unless you rebooted or restarted the xorg service (X-server).
+But in the manual page there's a way that you can make sxhkd apply the new changes by sending SIGUSR1 or SIGUSR2 signal to sxhkd process number.
+
+I already have an alias for that in my .bashrc file which is 
+                                
+                    kill -10 $(pidof sxhkd)
+
+where -10 is SIGUSR1 signal number and the command "pidof sxhkd" gets the sxhkd process number
+
+
+
+
+
+
