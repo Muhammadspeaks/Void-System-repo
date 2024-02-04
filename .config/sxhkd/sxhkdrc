@@ -1,5 +1,22 @@
+
+#Browser
+
 super + w
         firefox
+        
+#Existing linux (Shutdown, reboot, exit)
 
 super + shift + BackSpace
         $HOME/bin/exit.sh
+
+# Volume controls
+
+super + KP_Multiply
+        bash $HOME/scripts/volume.sh toggle
+
+super + KP_Add   
+        bash $HOME/scripts/volume.sh up
+
+super + KP_Subtract 
+        bash $HOME/scripts/volume.sh down
+
