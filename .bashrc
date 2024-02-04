@@ -54,3 +54,4 @@ _git_clone_sub ()
     fi
 }
 
+bash ~/.welcome/welcome.sh
