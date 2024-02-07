@@ -11,12 +11,15 @@ super + shift + BackSpace
 
 # Volume controls
 
+super + KP_Divide
+        bash $HOME/bin/notify-vol.sh unmute
+
 super + KP_Multiply
-        bash $HOME/scripts/volume.sh toggle
+        bash $HOME/bin/notify-vol.sh mute
 
 super + KP_Add   
-        bash $HOME/scripts/volume.sh up
+        bash $HOME/bin/notify-vol.sh up
 
 super + KP_Subtract 
-        bash $HOME/scripts/volume.sh down
+        bash $HOME/bin/notify-vol.sh down
 
