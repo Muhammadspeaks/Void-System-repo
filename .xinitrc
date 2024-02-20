@@ -10,7 +10,9 @@
 
 # Resolution
 . ~/scripts/res-fix.sh
-
+. ~/scripts/compisitor.sh
+. ~/scripts/status.sh 
+. ~/scripts/load-st.sh
 # Keyboard Layouts
 
 setxkbmap -layout us,ara -variant ,digits -option grp:switch,grp:ctrl_alt_toggle
@@ -29,8 +31,5 @@ while true; do
         dwm >/dev/null 2>&1
 done
 
-# Status bar
-slstatus &
-
 # startx
-dwm
+exec dwm 

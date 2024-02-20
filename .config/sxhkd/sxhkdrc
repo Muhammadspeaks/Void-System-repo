@@ -22,4 +22,13 @@ super + KP_Add
 
 super + KP_Subtract 
         bash $HOME/bin/notify-vol.sh down
+# Dmenu
 
+super + shift + d
+        dmenu_run
+
+
+# Screen-shot (flameshot)
+
+super + shift + s
+        flameshot full
