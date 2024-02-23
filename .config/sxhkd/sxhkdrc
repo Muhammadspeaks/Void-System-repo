@@ -11,24 +11,30 @@ super + shift + BackSpace
 
 # Volume controls
 
-super + KP_Divide
-        bash $HOME/bin/notify-vol.sh unmute
+{XF86AudioMute, XF86AudioRaiseVolume, XF86AudioLowerVolume}
+        bash $HOME/bin/notify-vol.sh {mute, up, down}
 
-super + KP_Multiply
-        bash $HOME/bin/notify-vol.sh mute
-
-super + KP_Add   
-        bash $HOME/bin/notify-vol.sh up
-
-super + KP_Subtract 
-        bash $HOME/bin/notify-vol.sh down
 # Dmenu
 
 super + shift + d
         dmenu_run
 
+# Screen-shot (maim)
 
-# Screen-shot (flameshot)
+super + s
+        maim -u -i $(xdotool getactivewindow) ~/Pictures/$(shuf -i 100-1000 -n 1)-AW.png
+
+super + shift + f
+                maim ~/Pictures/$(shuf -i 100-1000 -n 1)-FULL.png 
 
 super + shift + s
-        flameshot full
+                maim -s ~/Pictures/$(shuf -i 100-1000 -n 1)-SLC.png
+# nnn
+
+super + n
+        st nnn -e -Rr
+
+# Vim
+
+super + v
+        st -e vim
